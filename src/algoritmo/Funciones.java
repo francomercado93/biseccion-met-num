@@ -1,61 +1,9 @@
 package algoritmo;
-//
-
-//import java.awt.BorderLayout;
-//
-//import javax.swing.JFrame;
-//import javax.swing.JTable;
-//import javax.swing.table.DefaultTableModel;
-//
-//public class Funciones {
-//	/*
-//	 * ---------------------------------------------------------------- -- 
-//	 * ALGORITMO DE BISECCION -- input = f : R -> R con f continua, a € R, b € R, (a > b), epsilon o valor de aprox,
-//	 * f(a) * f(b) < 0 mientras que ((b - a) / a >= epsilon) { let c = (a + b) / 2 if(f(c) ==
-//	 * 0) return c; if(signo(f(a) != signo(f(c))) b = c; else a = c; }
-//	 * ----------------------------------------------------------------
-//	 */
-//	static JTable tabla = new JTable();
-//	static DefaultTableModel modelo = new DefaultTableModel();
-//	static String[] columnas = { "i", "a", "b", "c", "f(c)" };
-//
-//	static JTable algoritmoBiseccion(Float a, Float b, Float epsilon, Float w) {
-//		Float c = 0f;
-//		Integer i = new Integer(0);
-//		modelo.setColumnIdentifiers(columnas);
-//		while ((b - a) >= epsilon) {
-//			c = (w * a + (1 - w) * b);
-////			System.out.println(i++ + "\t|" + a + "\t\t|" + b + "\t\t|" + c + "\t|" + Funcion.funcion(c));
-//			if (Funcion.funcion(c) == 0)
-//				return tabla;
-//			if ((signo(Funcion.funcion(a)) * signo(Funcion.funcion(c))) < 0)
-//				b = c;
-//			else
-//				a = c;
-//			String datos[] = { (i++).toString(), a.toString(), b.toString(), c.toString(),
-//					Funcion.funcion(c).toString() };
-//			modelo.addRow(datos);
-//			System.out.println(datos[1]);
-//		}
-//		return tabla;
-//	}
-//
-//	/* FUNCION SIGNO */
-//	static int signo(Float x) {
-//		if (x > 0)
-//			return 1;
-//		else
-//			return -1;
-//	}
-//	
-//
-//}
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -128,14 +76,7 @@ public class Funciones extends JFrame implements ActionListener {
 			modelo.addRow(datos);
 		}
 		return c;
-//		for (Integer i = 0; i < 100; i++) {
-//			String mensaje = i + " UNIDADES";
-//
-//			// Creamos un nuevo renglon para la tabla
-//			String[] datos = { i.toString(), mensaje };
-//			// Agregamos los datos a la tabla
-//			modelo.addRow(datos);
-//		}
+
 	}
 
 	/**
