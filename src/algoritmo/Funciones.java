@@ -62,39 +62,21 @@ public class Funciones extends JFrame implements ActionListener {
 	 */
 	private Float algoritmoBiseccion(Float a, Float b, Float w, Float epsilon) {
 		Float c = 0f;
+		Float fc = 0f;
 		Integer i = new Integer(0);
 		while ((b - a) >= epsilon) {
 			c = (w * a + (1 - w) * b);
-			if (Funcion.funcion(c) == 0)
+			fc = Funcion.funcion(c);
+			String datos[] = { (i++).toString(), a.toString(), b.toString(), c.toString(), fc.toString() };
+			modelo.addRow(datos);
+			if (fc == 0)
 				return c;
-			if ((signo(Funcion.funcion(a)) * signo(Funcion.funcion(c))) < 0)
+			if ((signo(Funcion.funcion(a)) * signo(fc)) < 0)
 				b = c;
 			else
 				a = c;
-			String datos[] = { (i++).toString(), a.toString(), b.toString(), c.toString(),
-					Funcion.funcion(c).toString() };
-			modelo.addRow(datos);
 		}
 		return c;
-
-	}
-
-	/**
-	 * Manejador del evento del boton, al activarse obtiene un dato de la tabla y lo
-	 * imprime en la consola
-	 *
-	 * @param e
-	 */
-	public void actionPerformed(ActionEvent e) {
-		// Obtenemos el primer dato del renglon seleccionado
-		if (tabla.getSelectedRow() != -1) {
-			String codigo = (String) modelo.getValueAt(tabla.getSelectedRow(), 0);
-
-			// Lo imprimimos en pantalla
-			System.out.println(codigo);
-		} else {
-			System.out.println("Seleccione un renglon primero");
-		}
 	}
 
 	/* FUNCION SIGNO */
@@ -103,6 +85,11 @@ public class Funciones extends JFrame implements ActionListener {
 			return 1;
 		else
 			return -1;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		System.out.println("No hay acciones disponibles");
 	}
 
 }
